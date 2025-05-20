@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CyberHelp - Q&A</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f8ff;
+      margin: 0;
+      padding: 0;
+      color: #003366;
+    }
+    header {
+      background-color: #0b3d91;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      flex: 1 1 auto;
+      min-width: 150px;
+    }
+    nav {
+      flex: 3 1 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      margin: 0;
+      padding: 0;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      white-space: nowrap;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    #google_translate_element {
+      flex: 1 1 150px;
+      text-align: right;
+    }
+    main {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #003366;
+    }
+    .faq-item {
+      border-bottom: 1px solid #ddd;
+      padding: 1rem 0;
+      cursor: pointer;
+      user-select: none;
+    }
+    .faq-question {
+      font-weight: 600;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #003366;
+      font-size: 1.1rem;
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      color: #222;
+      margin-top: 0.5rem;
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+    .faq-item.active .faq-answer {
+      max-height: 200px;
+    }
+    .faq-question i {
+      transition: transform 0.3s ease;
+      color: #0b3d91;
+      font-size: 1.3rem;
+    }
+    .faq-item.active .faq-question i {
+      transform: rotate(180deg);
+      color: #0066cc;
+    }
+    footer {
+      background-color: #0b3d91;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 3rem;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="logo">CyberHelp</div>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="report.html">Report</a></li>
+      <li><a href="review.html">Review</a></li>
+      <li><a href="uploads.html">Saviour Wall</a></li>
+      <li><a href="qna.html">Q&A</a></li>
+      <li><a href="references.html">Resources</a></li>
+
+    </ul>
+  </nav>
+  <div id="google_translate_element"></div>
+</header>
+
+<main>
+  <h1>Frequently Asked Questions</h1>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      What is cyber security?
+      <i class="bi bi-chevron-down"></i>
+    </div>
+    <div class="faq-answer">
+      Cyber security involves protecting computers, networks, and data from unauthorized access or attacks.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      What are common cyber crimes?
+      <i class="bi bi-chevron-down"></i>
+    </div>
+    <div class="faq-answer">
+      Common cyber crimes include phishing, identity theft, online scams, hacking, and cyberbullying.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      How can I protect my passwords?
+      <i class="bi bi-chevron-down"></i>
+    </div>
+    <div class="faq-answer">
+      Use strong, unique passwords for each account and enable two-factor authentication whenever possible.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      What is phishing?
+      <i class="bi bi-chevron-down"></i>
+    </div>
+    <div class="faq-answer">
+      Phishing is a fraudulent attempt to obtain sensitive information by pretending to be a trustworthy entity.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      How do I report a cyber crime?
+      <i class="bi bi-chevron-down"></i>
+    </div>
+    <div class="faq-answer">
+      Use official police websites or helplines. CyberHelp’s report page also guides you to official channels.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      Can I recover money lost in an online scam?
+      <i class="bi bi-chevron-down"></i>
+    </div>
+    <div class="faq-answer">
+      Recovery depends on the case and authorities, but report it immediately to increase chances.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      What is two-factor authentication?
+      <i class="bi bi-chevron-down"></i>
+    </div>
+    <div class="faq-answer">
+      A security process requiring two forms of identification before accessing an account.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      How can I identify fake websites?
+      <i class="bi bi-chevron-down"></i>
+    </div>
+    <div class="faq-answer">
+      Check for HTTPS, correct URLs, and avoid suspicious links or pop-ups.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      What should I do if hacked?
+      <i class="bi bi-chevron-down"></i>
+    </div>
+    <div class="faq-answer">
+      Change your passwords immediately and report the incident to authorities.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      Is public Wi-Fi safe to use?
+      <i class="bi bi-chevron-down"></i>
+    </div>
+    <div class="faq-answer">
+      Public Wi-Fi is risky; use VPNs or avoid sensitive transactions on them.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      What is ransomware?
+      <i class="bi bi-chevron-down"></i>
+    </div>
+    <div class="faq-answer">
+      Malware that locks your files and demands payment to unlock them.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      How do I avoid online scams?
+      <i class="bi bi-chevron-down"></i>
+    </div>
+    <div class="faq-answer">
+      Be skeptical of unsolicited offers and verify sources before sharing info.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      Can cyber bullying be reported?
+      <i class="bi bi-chevron-down"></i>
+    </div>
+    <div class="faq-answer">
+      Yes, report it to platforms and local authorities.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      What is a VPN?
+      <i class="bi bi-chevron-down"></i>
+    </div>
+    <div class="faq-answer">
+      A Virtual Private Network encrypts your internet connection for privacy.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      How often should I update software?
+      <i class="bi bi-chevron-down"></i>
+    </div>
+    <div class="faq-answer">
+      Always update promptly to patch security vulnerabilities.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      What are cookies on websites?
+      <i class="bi bi-chevron-down"></i>
+    </div>
+    <div class="faq-answer">
+      Small data files websites store to remember your preferences and activity.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      Can I delete my digital footprint?
+      <i class="bi bi-chevron-down"></i>
+    </div>
+    <div class="faq-answer">
+      Completely deleting is hard, but you can reduce it by managing privacy settings.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      What is identity theft?
+      <i class="bi bi-chevron-down"></i>
+    </div>
+    <div class="faq-answer">
+      When someone steals your personal info to commit fraud or crimes.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      How do I recognize phishing emails?
+      <i class="bi bi-chevron-down"></i>
+    </div>
+    <div class="faq-answer">
+      Look for poor grammar, suspicious links, and urgent requests for info.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      Is it safe to click links in messages?
+      <i class="bi bi-chevron-down"></i>
+    </div>
+    <div class="faq-answer">
+      Only if you trust the sender; verify before clicking.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      How can I protect my kids online?
+      <i class="bi bi-chevron-down"></i>
+    </div>
+    <div class="faq-answer">
+      Use parental controls, monitor activities, and educate them about risks.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      What is spyware?
+      <i class="bi bi-chevron-down"></i>
+    </div>
+    <div class="faq-answer">
+      Software that secretly collects your data without permission.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      Can mobile phones get viruses?
+      <i class="bi bi-chevron-down"></i>
+    </div>
+    <div class="faq-answer">
+      Yes, especially if apps are downloaded from untrusted sources.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      What should I do if my social media is hacked?
+      <i class="bi bi-chevron-down"></i>
+    </div>
+    <div class="faq-answer">
+      Change passwords, notify the platform, and warn your contacts.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      How to report cyber crimes anonymously?
+      <i class="bi bi-chevron-down"></i>
+    </div>
+    <div class="faq-answer">
+      Some official sites allow anonymous reporting; check your local authorities.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      What is a firewall?
+      <i class="bi bi-chevron-down"></i>
+    </div>
+    <div class="faq-answer">
+      A security system that monitors and controls incoming/outgoing network traffic.
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <p>&copy; 2025 CyberHelp. All rights reserved.</p>
+</footer>
+
+<script>
+  // FAQ toggle
+  document.querySelectorAll('.faq-item').forEach(item => {
+    item.querySelector('.faq-question').addEventListener('click', () => {
+      item.classList.toggle('active');
+    });
+  });
+
+  // Google Translate init with Indian languages only
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'en',
+      includedLanguages: 'hi,bn,ta,te,mr,kn,ml,pa,gu,or,as',
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+    }, 'google_translate_element');
+  }
+</script>
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>t"></script>
+</body>
+</html>

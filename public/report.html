@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Report Cyber Crime - CyberHelp</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+  <style>
+    .report-container {
+      max-width: 600px;
+      margin: 3rem auto;
+      padding: 2rem;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .report-container h2 {
+      text-align: center;
+      color: #0b3d91;
+      margin-bottom: 1rem;
+    }
+
+    .report-form label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+    }
+
+    .report-form input,
+    .report-form textarea {
+      width: 100%;
+      padding: 0.7rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    .marquee-container {
+        width: 100%;
+        overflow: hidden;
+        background-color: #000428;
+        color: #ffffff;
+        padding: 10px 0;
+        font-weight: bold;
+        border-top: 2px solid #00f0ff;
+        border-bottom: 2px solid #00f0ff;
+    }
+
+    .marquee-content {
+        display: inline-block;
+        white-space: nowrap;
+        animation: marquee 15s linear infinite;
+        font-size: 1rem;
+    }
+
+    @keyframes marquee {
+        0%   { transform: translateX(100%); }
+        100% { transform: translateX(-100%); }
+    }
+
+
+    .report-form button {
+      background-color: #0b3d91;
+      color: white;
+      padding: 0.7rem 1.5rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .report-form button:hover {
+      background-color: #062b6e;
+    }
+
+    .translate-container {
+      margin-left: 1rem;
+    }
+
+    .goog-te-banner-frame.skiptranslate {
+      display: none !important;
+    }
+
+    body {
+      top: 0px !important;
+    }
+
+    .goog-logo-link,
+    .goog-te-gadget span {
+      display: none !important;
+    }
+
+    #google_translate_element {
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+<header>
+  <div class="logo">CyberHelp</div>
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="report.html">Report</a></li>
+      <li><a href="review.html">Review</a></li>
+      <li><a href="uploads.html">Saviour Wall</a></li>
+      <li><a href="qna.html">Q&A</a></li>
+      <li><a href="references.html">Resources</a></li>
+
+      <li class="translate-container">
+        <div id="google_translate_element"></div>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <div class="marquee-container">
+    <div class="marquee-content">
+      Cyber Crime Helpline: 1930 |  Stay Safe. Stay Alert. You can email at <EMAIL> cybercrimenodal@ksp.gov.in</EMAIL>
+    </div>
+  </div>
+
+  <div class="report-container">
+    <h2>Report a Cyber Crime</h2>
+    <form action="http://localhost:3000/submit-report" method="POST" enctype="multipart/form-data" class="report-form">
+      <label for="name">Your Name:</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="email">Your Email:</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="incident">Describe the Incident:</label>
+      <textarea id="incident" name="incident" rows="5" required></textarea>
+
+      <label for="screenshot">Upload Screenshot (optional):</label>
+      <input type="file" id="screenshot" name="screenshot" accept="image/*" />
+
+      <button type="submit">Submit Report</button>
+    </form>
+  </div>
+</main>
+<div class="disclaimer-box">
+  <p>
+    <strong>Note:</strong> CyberHelp is <em>not</em> an official reporting platform. This section is intended only to assist and guide you in taking the necessary steps. After submitting the form, instructions and recommendations will be sent to your email. For urgent or legal cases, please report directly on the official cyber crime portal at
+    <a href="https://cybercrime.gov.in" target="_blank">cybercrime.gov.in</a>.
+  </p>
+</div>
+
+
+<footer>
+  <p>&copy; 2025 CyberHelp. All rights reserved.</p>
+</footer>
+
+<!-- Google Translate Script -->
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'en',
+      includedLanguages: 'en,hi,ta,te,gu,bn,ml,mr,kn,pa,ur',
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    }, 'google_translate_element');
+  }
+</script>
+<script type="text/javascript"
+        src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+
+</html>

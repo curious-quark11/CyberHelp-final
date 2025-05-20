@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CyberHelp - Thank You EQUBE</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #eef4fb;
+      color: #003366;
+    }
+
+    header {
+      background-color: #0b3d91;
+      padding: 1rem 2rem;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      margin: 0;
+      padding: 0;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    #google_translate_element {
+      text-align: right;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      color: #0b3d91;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .about-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .about-text {
+      flex: 1 1 400px;
+    }
+
+    .about-text p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .profile-photo {
+      flex: 1 1 250px;
+      text-align: center;
+    }
+
+    .profile-photo img {
+      max-width: 200px;
+      border-radius: 50%;
+      border: 3px solid #0b3d91;
+      margin-bottom: 1rem;
+    }
+
+    .upload-btn {
+      display: inline-block;
+      margin-top: 0.5rem;
+      background-color: #0b3d91;
+      color: white;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .upload-btn:hover {
+      background-color: #062a60;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #0b3d91;
+      color: white;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="logo">CyberHelp</div>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="report.html">Report</a></li>
+      <li><a href="review.html">Review</a></li>
+      <li><a href="uploads.html">Saviour Wall</a></li>
+      <li><a href="qna.html">Q&A</a></li>
+      <li><a href="references.html">Resources</a></li>
+
+    </ul>
+  </nav>
+  <div id="google_translate_element"></div>
+</header>
+
+<main>
+  <h1>Thank You, EQUBE!</h1>
+  <div class="about-section">
+    <div class="profile-photo">
+      <img src="image/img7.jpg" alt="My Picture" style="max-width: 250px; border-radius: 12px;">
+      <br />
+    </div>
+
+    <div class="about-text">
+      <p>
+        I would like to extend my heartfelt thanks to <strong>EQUBE</strong> for providing me with the opportunity to pursue this Social Action Project.
+        As a young advocate of cyber safety, I’ve built CyberHelp with a vision to empower children and teenagers to protect themselves in the digital world.
+         The images used on this website are taken from various sources and are not my own. Special credits to <em>https://caniphish.com/</em> for the images used on the home page
+      </p>
+      <p>
+        This website is not only an awareness platform but also a safe space where users can understand cyber threats, report incidents, and become CyberHelpers
+        themselves. EQUBE’s platform has enabled me to channel my passion into something impactful and practical.
+      </p>
+      <p><em>Together, we build a safer internet — one step at a time.</em></p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <p>&copy; 2025 CyberHelp | Made with thanks to EQUBE SAP</p>
+</footer>
+
+<!-- Google Translate -->
+<script>
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'en',
+      includedLanguages: 'hi,bn,ta,te,mr,kn,ml,pa,gu,or,as',
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    }, 'google_translate_element');
+  }
+</script>
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<!-- Preview uploaded photo -->
+<script>
+  document.getElementById('profileUpload').addEventListener('change', function(event) {
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        document.getElementById('profilePreview').src = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    }
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CyberHelp Resources</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+      .references {
+          padding: 2rem;
+          text-align:left;
+          background-color: #f0f8ff;
+      }
+      .references img {
+          max-width: 900px;
+          border-radius: 0px;
+          margin-top: 1rem;
+      }
+      .references ul {
+          list-style-type: none;
+          padding: 0;
+      }
+      .references li {
+          margin: 10px 0;
+      }
+      .references a {
+          color: #004080;
+          text-decoration: none;
+          font-weight: bold;
+      }
+      .references a:hover {
+          text-decoration: underline;
+      }
+      .right-side-image {
+          position: absolute;
+          top: 200px;
+          right: 50px;
+          max-width: 300px;
+          z-index: 1;
+      }
+
+      .right-side-image img {
+          width: 100%;
+          height: auto;
+          border-radius: 12px;
+          box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+          transition: transform 0.3s ease;
+      }
+
+      .right-side-image img:hover {
+          transform: scale(1.05);
+      }
+
+      body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 0;
+          background-color: #f2f8ff;
+      }
+
+      header {
+          background-color: #0b3d91;
+          color: white;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 1rem 2rem;
+      }
+
+      .logo {
+          font-size: 1.8rem;
+          font-weight: bold;
+      }
+
+      .navbar ul {
+          list-style: none;
+          display: flex;
+          gap: 1rem;
+          margin: 0;
+          padding: 0;
+      }
+
+      .navbar a {
+          color: white;
+          text-decoration: none;
+          font-weight: bold;
+      }
+
+
+      .translate-container {
+          margin-left: 1rem;
+      }
+
+      #google_translate_element {
+          color: white;
+      }
+
+      footer {
+          background-color: #0b3d91;
+          color: white;
+          text-align: center;
+          padding: 1rem;
+          margin-top: 2rem;
+      }
+
+  </style>
+</head>
+<body>
+<header>
+  <div class="logo">CyberHelp</div>
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="report.html">Report</a></li>
+      <li><a href="review.html">Review</a></li>
+      <li><a href="uploads.html">Saviour Wall</a></li>
+      <li><a href="qna.html">Q&A</a></li>
+      <li><a href="references.html">Resources</a></li>
+
+      <li class="translate-container">
+        <div id="google_translate_element"></div>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<div class="references">
+  <h1>Useful Cybersecurity Resources</h1>
+  <ul>
+    <li><a href="https://www.cybercrime.gov.in/" target="_blank">Cyber Crime Portal (India)</a></li>
+    <li><a href="https://www.youtube.com/@reservebankofindia593" target="_blank">RBI Youtube Channel</a></li>
+    <li><a href="https://www.youtube.com/watch?v=D_TcI7AEkEg&list=PLavNoUnETM3AYzvk-smaF-CdD0FKP6p_F&index=1" target=_blank">Be aware of fake messages</a></li>
+    <li><a href="https://www.youtube.com/watch?v=yW-y-Bv2CGA&list=PLavNoUnETM3AYzvk-smaF-CdD0FKP6p_F&index=2" target="_blank">Awareness on different types of phishing</a></li>
+    <li><a href="https://www.youtube.com/watch?v=tmPAQtwxxWI&list=PLavNoUnETM3AYzvk-smaF-CdD0FKP6p_F&index=3" target="_blank">More awareness</a></li>
+    <li><a href="https://www.youtube.com/watch?v=bfGt2F9pkbc&list=PLavNoUnETM3AYzvk-smaF-CdD0FKP6p_F&index=5" target="_blank">More awareness</a></li>
+    <li><a href="https://www.youtube.com/watch?v=eGPvjmhAgzk&list=PLavNoUnETM3AYzvk-smaF-CdD0FKP6p_F&index=6" target="_blank">More awareness</a></li>
+    <li><a href="https://www.youtube.com/watch?v=-8rpXSo4YHg&list=PLavNoUnETM3AYzvk-smaF-CdD0FKP6p_F&index=4" target="_blank">More awareness</a></li>
+    <li><a href="https://www.rbi.org.in/" target="_blank">RBI</a></li>
+    <li><a href="https://www.instagram.com/p/C8b86aVoI4P/" target="_blank">Awareness Posts in Hindi</a></li>
+  </ul>
+</div>
+<div class="right-side-image">
+  <img src="image/img9.jpg" alt="Cyber Awareness">
+</div>
+
+<footer>
+  <p>&copy; 2025 CyberHelp. All rights reserved.</p>
+</footer>
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'en',
+      includedLanguages: 'en,hi,ta,te,gu,bn,ml,mr,kn,pa,ur',
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    }, 'google_translate_element');
+  }
+</script>
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html>
