@@ -54,12 +54,5 @@
     "incident": "Hello",
     "screenshot": null,
     "timestamp": "2025-05-20T21:23:35.493Z"
-  },
-  {
-    "name": "Ben",
-    "email": "B@k",
-    "incident": "Hello there",
-    "screenshot": null,
-    "timestamp": "2025-05-20T23:13:51.790Z"
   }
 ]
