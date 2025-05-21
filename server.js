@@ -4,29 +4,14 @@ const path = require('path');
 const fs = require('fs');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = 3000;
 
-// Middleware to parse JSON and URL-encoded data
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
-// Serve static files from public folder
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Optional Root Route
-app.get('/', (req, res) => {
-  res.send('CyberHelp backend is running!');
-});
-
-// Multer setup for screenshot uploads
 const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    const uploadDir = path.join(__dirname, 'uploads');
-    if (!fs.existsSync(uploadDir)) {
-      fs.mkdirSync(uploadDir);
-    }
-    cb(null, uploadDir);
-  },
+  destination: (req, file, cb) => cb(null, path.join(__dirname, 'uploads')),
   filename: (req, file, cb) => {
     const ext = path.extname(file.originalname);
     cb(null, file.fieldname + '-' + Date.now() + ext);
@@ -34,7 +19,7 @@ const storage = multer.diskStorage({
 });
 const upload = multer({ storage });
 
-// POST /submit-report
+// Submit report with file upload
 app.post('/submit-report', upload.single('screenshot'), (req, res) => {
   const { name, email, incident } = req.body;
   const screenshot = req.file ? req.file.filename : null;
@@ -57,6 +42,7 @@ app.post('/submit-report', upload.single('screenshot'), (req, res) => {
     });
 
     fs.writeFileSync(reportsFile, JSON.stringify(reports, null, 2), 'utf8');
+
     console.log('Report saved:', { name, email, incident, screenshot });
     res.redirect('/thank-you.html');
   } catch (error) {
@@ -65,43 +51,35 @@ app.post('/submit-report', upload.single('screenshot'), (req, res) => {
   }
 });
 
-// POST /submit-review
+// Submit review
 app.post('/submit-review', (req, res) => {
   const { name, feedback } = req.body;
   const reviewsFile = path.join(__dirname, 'reviews.json');
 
-  if (!fs.existsSync(reviewsFile)) {
-    fs.writeFileSync(reviewsFile, '[]', 'utf8');
-  }
-
-  fs.readFile(reviewsFile, 'utf8', (err, data) => {
-    if (err) {
-      console.error('Error reading reviews file:', err);
-      return res.status(500).send('Server error');
+  try {
+    if (!fs.existsSync(reviewsFile)) {
+      fs.writeFileSync(reviewsFile, '[]', 'utf8');
     }
 
-    let reviews = [];
-    try {
-      reviews = JSON.parse(data);
-    } catch (parseErr) {
-      console.error('Error parsing reviews:', parseErr);
-      reviews = [];
-    }
+    const data = fs.readFileSync(reviewsFile, 'utf8');
+    let reviews = JSON.parse(data);
 
-    reviews.push({ name, feedback, date: new Date().toISOString() });
-
-    fs.writeFile(reviewsFile, JSON.stringify(reviews, null, 2), (writeErr) => {
-      if (writeErr) {
-        console.error('Error writing review:', writeErr);
-        return res.status(500).send('Server error');
-      }
-
-      console.log('Review saved:', { name, feedback });
-      res.redirect('/thank-you-review.html');
+    reviews.push({
+      name,
+      feedback,
+      date: new Date().toISOString()
     });
-  });
+
+    fs.writeFileSync(reviewsFile, JSON.stringify(reviews, null, 2), 'utf8');
+
+    console.log('Review saved:', { name, feedback });
+    res.redirect('/thank-you-review.html');
+  } catch (error) {
+    console.error('Error saving review:', error);
+    res.status(500).send('Server error');
+  }
 });
 
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log(`Server running at http://localhost:${PORT}`);
 });
