@@ -4,14 +4,20 @@ const path = require('path');
 const fs = require('fs');
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000; 
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Ensure 'uploads' directory exists
+const uploadDir = path.join(__dirname, 'uploads');
+if (!fs.existsSync(uploadDir)) {
+  fs.mkdirSync(uploadDir);
+}
+
 const storage = multer.diskStorage({
-  destination: (req, file, cb) => cb(null, path.join(__dirname, 'uploads')),
+  destination: (req, file, cb) => cb(null, uploadDir),
   filename: (req, file, cb) => {
     const ext = path.extname(file.originalname);
     cb(null, file.fieldname + '-' + Date.now() + ext);
@@ -19,7 +25,6 @@ const storage = multer.diskStorage({
 });
 const upload = multer({ storage });
 
-// Submit report with file upload
 app.post('/submit-report', upload.single('screenshot'), (req, res) => {
   const { name, email, incident } = req.body;
   const screenshot = req.file ? req.file.filename : null;
@@ -51,7 +56,6 @@ app.post('/submit-report', upload.single('screenshot'), (req, res) => {
   }
 });
 
-// Submit review
 app.post('/submit-review', (req, res) => {
   const { name, feedback } = req.body;
   const reviewsFile = path.join(__dirname, 'reviews.json');
@@ -81,5 +85,5 @@ app.post('/submit-review', (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}`);
+  console.log(` Server running on port ${PORT}`);
 });
