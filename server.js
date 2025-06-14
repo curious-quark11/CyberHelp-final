@@ -4,7 +4,7 @@ const path = require('path');
 const fs = require('fs');
 
 const app = express();
-const PORT = process.env.PORT || 3000; 
+const PORT = process.env.PORT || 3000; // Use the Render-provided port or default to 3000 locally
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -84,6 +84,7 @@ app.post('/submit-review', (req, res) => {
   }
 });
 
+// ✅ Correct listen() for Render:
 app.listen(PORT, () => {
   console.log(` Server running on port ${PORT}`);
 });

@@ -5,14 +5,7 @@ body {
   color: #000;
 }
 
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: linear-gradient(to right, #0a3d62, #3c6382);
-  padding: 1rem 2rem;
-  color: white;
-}
+
 
 .logo {
   font-size: 1.5rem;
@@ -86,10 +79,11 @@ footer {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(to right, #0a3d62, #3c6382);
+  background-color: #0b3d91;
   padding: 1rem 1.5rem;
   color: white;
 }
+
 
 .nav-links ul {
   list-style: none;
@@ -117,7 +111,6 @@ footer {
 
 /* Translate Box */
 #google_translate_element {
-  margin-left: auto;
   padding-left: 1rem;
 }
 
@@ -149,7 +142,7 @@ footer {
 
   .carousel-image {
     width: 300px;         /* Adjust as needed */
-    height: 200px;        /* Maintain aspect ratio */
+    height: 200px;
     object-fit: cover;
     border-radius: 10px;
     margin: 0 auto;
@@ -224,7 +217,7 @@ header {
 }
 .hero {
   padding: 4rem 2rem;
-  background: linear-gradient(to right, #05b6b3, #003366);
+  background: linear-gradient(to right, #085ac3, #003366);
   color: white;
   text-align: center;
 }
